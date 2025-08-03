@@ -2,154 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Coolest - Collection</title>
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
-  <style>
-    /* General Reset and Base Styles */
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #fff;
-      color: #222;
-    }
-    /* Header and Navigation */
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 30px;
-      border-bottom: 1px solid #ddd;
-    }
-    .logo {
-      font-weight: 900;
-      font-size: 1.8rem;
-      color: black;
-      letter-spacing: 2px;
-    }
-    nav.icon-links a {
-      margin-left: 20px;
-      color: black;
-      font-size: 1.4rem;
-      transition: color 0.3s ease;
-      text-decoration: none;
-    }
-    nav.icon-links a:hover {
-      color: #555;
-    }
-    nav.icon-links.right {
-      display: flex;
-      align-items: center;
-    }
-    /* Main container */
-    main {
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 0 15px 40px;
-    }
-    /* Product grid */
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
-    /* Product cards */
-    .product-card {
-      aspect-ratio: 1 / 1;
-      background: white;
-      border: 1px solid #ccc;
-      border-radius: 12px;
-      padding: 15px;
-      display: flex;
-      flex-direction: column;
-      box-sizing: border-box;
-      justify-content: flex-start;
-      transition: box-shadow 0.3s ease;
-    }
-    .product-card:hover {
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-    }
-    .product-card img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      margin-bottom: 10px;
-      flex-shrink: 0;
-      object-fit: contain;
-      max-height: 40%;
-    }
-    .product-card h3 {
-      margin: 5px 0 10px;
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: black;
-      flex-shrink: 0;
-    }
-    label {
-      font-weight: 600;
-      margin-top: 8px;
-      display: block;
-      color: #333;
-    }
-    select {
-      width: 100%;
-      padding: 6px;
-      margin-top: 4px;
-      border-radius: 6px;
-      border: 1px solid #aaa;
-      font-size: 1rem;
-      background: white;
-      cursor: pointer;
-    }
-    .color-selection {
-      display: flex;
-      gap: 12px;
-      margin: 12px 0;
-    }
-    .color-circle {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      border: 2px solid transparent;
-      cursor: pointer;
-      transition: border-color 0.3s ease;
-      flex-shrink: 0;
-    }
-    .color-circle.black {
-      background-color: black;
-    }
-    .color-circle.white {
-      background-color: white;
-      border: 2px solid #aaa;
-    }
-    .color-circle.grey {
-      background-color: grey;
-    }
-    .color-circle.selected {
-      border-color: black;
-    }
-    .add-to-cart-btn {
-      margin-top: auto;
-      background-color: black;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      padding: 12px 0;
-      font-weight: 700;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      width: 100%;
-    }
-    .add-to-cart-btn:hover {
-      background-color: #333;
-    }
-  </style>
+  <link rel="stylesheet" href="coolest.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
   <header>
@@ -161,27 +17,54 @@
       <a href="aboutus.html" title="About Us"><i class="fas fa-file-alt"></i></a>
     </nav>
   </header>
-
   <main>
-    <h2 style="text-align:center; margin-bottom: 30px;">Collection</h2>
-    <section class="product-grid">
-      <!-- Product cards here as before -->
+    <h2 style="text-align:center;">Our Clothing Collection</h2>
+    <section class="grid-collection">
+      <!-- Product Card (repeat 9x) -->
+      <div class="product-card">
+        <div class="product-slideshow">
+          <img class="product-slide" src="https://via.placeholder.com/300x400?text=Women+Look" alt="Women Look">
+          <img class="product-slide" src="https://via.placeholder.com/300x400?text=Men+Look" alt="Men Look">
+        </div>
+        <div class="product-info">
+          <select name="gender">
+            <option value="women">Women</option>
+            <option value="men">Men</option>
+          </select>
+
+          <select name="size">
+            <option value="s">S</option>
+            <option value="m">M</option>
+            <option value="l">L</option>
+            <option value="xl">XL</option>
+          </select>
+
+          <div class="color-options">
+            <label style="background-color: black;"></label>
+            <label style="background-color: white;"></label>
+            <label style="background-color: grey;"></label>
+          </div>
+
+          <div class="price-cart">
+            <span class="price">P250</span>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <!-- Repeat product-card 8 more times -->
     </section>
   </main>
 
   <script>
-    // Color selection handling (same as before)
-    document.querySelectorAll('.color-selection').forEach(container => {
-      container.querySelectorAll('.color-circle').forEach(circle => {
-        circle.addEventListener('click', () => {
-          container.querySelectorAll('.color-circle').forEach(c => {
-            c.classList.remove('selected');
-            c.setAttribute('aria-pressed', 'false');
-          });
-          circle.classList.add('selected');
-          circle.setAttribute('aria-pressed', 'true');
-        });
-      });
+    // Simple image slideshow for each product
+    document.querySelectorAll(".product-slideshow").forEach(slideshow => {
+      const slides = slideshow.querySelectorAll(".product-slide");
+      let index = 0;
+      setInterval(() => {
+        slides.forEach(s => s.style.display = "none");
+        slides[index].style.display = "block";
+        index = (index + 1) % slides.length;
+      }, 3000);
     });
   </script>
 </body>
