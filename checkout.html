@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coolest - Checkout</title>
+  <link rel="stylesheet" href="coolest.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <header>
+    <h1 class="logo">COOLEST</h1>
+    <nav class="icon-links right">
+      <a href="index.html" title="Home"><i class="fas fa-home"></i></a>
+      <a href="collection.html" title="Collection"><i class="fas fa-tshirt"></i></a>
+      <a href="cart.html" title="Cart"><i class="fas fa-shopping-cart"></i></a>
+      <a href="aboutus.html" title="About Us"><i class="fas fa-file-alt"></i></a>
+    </nav>
+  </header>
+
+  <main>
+    <h2 style="text-align:center">Checkout</h2>
+    <form class="checkout-form">
+      <label>Full Name:<br><input type="text" required></label><br>
+      <label>Email:<br><input type="email" required></label><br>
+      <label>Shipping Address:<br><textarea required></textarea></label><br>
+      <label>Payment Method:<br>
+        <select required>
+          <option value="">-- Select --</option>
+          <option value="credit">Credit Card</option>
+          <option value="debit">Debit Card</option>
+          <option value="paypal">PayPal</option>
+        </select>
+      </label><br>
+      <button type="submit" class="checkout-button">Place Order</button>
+    </form>
+    <p style="text-align:center;"><a href="cart.html">← Back to Cart</a></p>
+  </main>
+</body>
+</html>

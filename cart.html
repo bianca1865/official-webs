@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Coolest - Cart</title>
-  <link rel="stylesheet" href="coolest.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="coolest.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
 </head>
 <body>
   <header>
@@ -20,26 +20,48 @@
 
   <main>
     <h2 style="text-align:center;">Your Cart</h2>
-    <section class="cart-items">
-      <div class="cart-item">
-        <img src="https://via.placeholder.com/100x130?text=Item" alt="Item">
-        <div class="item-details">
-          <p><strong>Cool Shirt</strong></p>
-          <p>Gender: Women</p>
-          <p>Size: M</p>
-          <div class="item-meta">
-            <label>Qty:</label>
+
+    <section class="product-grid">
+      <!-- Cart Item 1 -->
+      <div class="product-card">
+        <div class="slideshow-container">
+          <img src="https://via.placeholder.com/150x200?text=Cool+Top" class="slide-image" alt="Cool Top">
+        </div>
+        <div class="product-info">
+          <h3>Cool Top</h3>
+          <p><strong>Gender:</strong> Women</p>
+          <p><strong>Size:</strong> M</p>
+          <p><strong>Color:</strong> <span class="color-box" style="background-color: black;"></span></p>
+          <label>Quantity:
             <input type="number" value="1" min="1" class="quantity-input">
-            <span class="price">P250</span>
-          </div>
+          </label>
+          <p><strong>Price:</strong> P250</p>
         </div>
       </div>
-      <!-- Repeat similar block for other items -->
+
+      <!-- Cart Item 2 -->
+      <div class="product-card">
+        <div class="slideshow-container">
+          <img src="https://via.placeholder.com/150x200?text=Grey+Jacket" class="slide-image" alt="Grey Jacket">
+        </div>
+        <div class="product-info">
+          <h3>Grey Jacket</h3>
+          <p><strong>Gender:</strong> Men</p>
+          <p><strong>Size:</strong> L</p>
+          <p><strong>Color:</strong> <span class="color-box" style="background-color: grey;"></span></p>
+          <label>Quantity:
+            <input type="number" value="1" min="1" class="quantity-input">
+          </label>
+          <p><strong>Price:</strong> P400</p>
+        </div>
+      </div>
+
+      <!-- Add more cart items similarly as needed -->
     </section>
 
-    <section class="cart-summary">
-      <p><strong>Total: P250</strong></p>
-      <a href="checkout.html" class="checkout-button">Proceed to Checkout</a>
+    <section class="cart-summary" style="text-align:center; margin: 40px 0;">
+      <p><strong>Total: P650</strong></p>
+      <a href="checkout.html" class="checkout-button" style="background-color: black; color: white;">Proceed to Checkout</a>
     </section>
   </main>
 </body>
