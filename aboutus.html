@@ -1,11 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Coolest - About Us</title>
-  <link rel="stylesheet" href="coolest.css">
+  <link rel="stylesheet" href="coolest.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body {
+      background: #fff;
+      color: #222;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+    main.about-content {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px 60px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      background: #f9f9f9;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    }
+    main.about-content section {
+      padding: 30px 0;
+      border-bottom: 1px solid #ccc;
+    }
+    main.about-content section:last-child {
+      border-bottom: none;
+    }
+    main.about-content h2 {
+      font-weight: 700;
+      font-size: 2rem;
+      margin-bottom: 15px;
+      color: #111;
+      text-align: center;
+    }
+    main.about-content p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #333;
+      text-align: center;
+    }
+    .contact-section p {
+      margin-bottom: 25px;
+    }
+    .social-icons {
+      text-align: center;
+    }
+    .social-icons a {
+      display: inline-block;
+      margin: 0 15px;
+      font-size: 1.8rem;
+      color: black;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+    .social-icons a:hover {
+      color: #555;
+      transform: scale(1.2);
+    }
+    header, nav.icon-links {
+      /* keep existing styles consistent */
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -33,13 +95,12 @@
       <h2>Contact Us</h2>
       <p>We'd love to hear from you! Reach out through any of the platforms below:</p>
       <div class="social-icons">
-        <a href="#" title="Facebook"><i class="fab fa-facebook-f" style="color: black;"></i></a>
-        <a href="#" title="Instagram"><i class="fab fa-instagram" style="color: black;"></i></a>
-        <a href="#" title="Twitter"><i class="fab fa-twitter" style="color: black;"></i></a>
-        <a href="#" title="Email"><i class="fas fa-envelope" style="color: black;"></i></a>
+        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" title="Email"><i class="fas fa-envelope"></i></a>
       </div>
     </section>
   </main>
-
 </body>
 </html>
