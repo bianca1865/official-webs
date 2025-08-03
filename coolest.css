@@ -56,3 +56,83 @@ main {
   padding: 20px;
   text-align: center;
 }
+.grid-collection {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 30px;
+  justify-items: center;
+}
+
+.product-card {
+  width: 300px;
+  border: 1px solid #ddd;
+  padding: 15px;
+  text-align: center;
+  background: #fafafa;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.product-slideshow {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-slide {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+}
+
+.product-info {
+  margin-top: 10px;
+}
+
+.product-info select {
+  width: 48%;
+  margin: 5px 1%;
+  padding: 5px;
+}
+
+.color-options {
+  margin-top: 10px;
+}
+
+.color-options label {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.price-cart {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.add-to-cart {
+  background: black;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.add-to-cart:hover {
+  background: grey;
+}
+

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Coolest - Collection</title>
   <link rel="stylesheet" href="coolest.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -10,20 +10,63 @@
 <body>
   <header>
     <h1 class="logo">COOLEST</h1>
-    <nav class="icon-links">
+    <nav class="icon-links right">
       <a href="index.html" title="Home"><i class="fas fa-home"></i></a>
-      <a href="collection.html"><i class="fas fa-tshirt"></i></a>
-      <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
-      <a href="aboutus.html"><i class="fas fa-file-alt"></i></a>
+      <a href="collection.html" title="Collection"><i class="fas fa-tshirt"></i></a>
+      <a href="cart.html" title="Cart"><i class="fas fa-shopping-cart"></i></a>
+      <a href="aboutus.html" title="About Us"><i class="fas fa-file-alt"></i></a>
     </nav>
   </header>
-
   <main>
-    <section>
-      <h2 style="text-align:center;">Our Clothing Collection</h2>
-      <p style="text-align:center;">Browse our latest fashion pieces in black, white, and grey styles.</p>
+    <h2 style="text-align:center;">Our Clothing Collection</h2>
+    <section class="grid-collection">
+      <!-- Product Card (repeat 9x) -->
+      <div class="product-card">
+        <div class="product-slideshow">
+          <img class="product-slide" src="https://via.placeholder.com/300x400?text=Women+Look" alt="Women Look">
+          <img class="product-slide" src="https://via.placeholder.com/300x400?text=Men+Look" alt="Men Look">
+        </div>
+        <div class="product-info">
+          <select name="gender">
+            <option value="women">Women</option>
+            <option value="men">Men</option>
+          </select>
+
+          <select name="size">
+            <option value="s">S</option>
+            <option value="m">M</option>
+            <option value="l">L</option>
+            <option value="xl">XL</option>
+          </select>
+
+          <div class="color-options">
+            <label style="background-color: black;"></label>
+            <label style="background-color: white;"></label>
+            <label style="background-color: grey;"></label>
+          </div>
+
+          <div class="price-cart">
+            <span class="price">P250</span>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <!-- Repeat product-card 8 more times -->
     </section>
   </main>
+
+  <script>
+    // Simple image slideshow for each product
+    document.querySelectorAll(".product-slideshow").forEach(slideshow => {
+      const slides = slideshow.querySelectorAll(".product-slide");
+      let index = 0;
+      setInterval(() => {
+        slides.forEach(s => s.style.display = "none");
+        slides[index].style.display = "block";
+        index = (index + 1) % slides.length;
+      }, 3000);
+    });
+  </script>
 </body>
 </html>
 
