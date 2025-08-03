@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Coolest - Cart</title>
   <link rel="stylesheet" href="coolest.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -10,18 +10,36 @@
 <body>
   <header>
     <h1 class="logo">COOLEST</h1>
-    <nav class="icon-links">
+    <nav class="icon-links right">
       <a href="index.html" title="Home"><i class="fas fa-home"></i></a>
-      <a href="collection.html"><i class="fas fa-tshirt"></i></a>
-      <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
-      <a href="aboutus.html"><i class="fas fa-file-alt"></i></a>
+      <a href="collection.html" title="Collection"><i class="fas fa-tshirt"></i></a>
+      <a href="cart.html" title="Cart"><i class="fas fa-shopping-cart"></i></a>
+      <a href="aboutus.html" title="About Us"><i class="fas fa-file-alt"></i></a>
     </nav>
   </header>
 
   <main>
-    <section>
-      <h2 style="text-align:center;">Your Cart</h2>
-      <p style="text-align:center;">Items you add to your cart will appear here for checkout.</p>
+    <h2 style="text-align:center;">Your Cart</h2>
+    <section class="cart-items">
+      <div class="cart-item">
+        <img src="https://via.placeholder.com/100x130?text=Item" alt="Item">
+        <div class="item-details">
+          <p><strong>Cool Shirt</strong></p>
+          <p>Gender: Women</p>
+          <p>Size: M</p>
+          <div class="item-meta">
+            <label>Qty:</label>
+            <input type="number" value="1" min="1" class="quantity-input">
+            <span class="price">P250</span>
+          </div>
+        </div>
+      </div>
+      <!-- Repeat similar block for other items -->
+    </section>
+
+    <section class="cart-summary">
+      <p><strong>Total: P250</strong></p>
+      <a href="checkout.html" class="checkout-button">Proceed to Checkout</a>
     </section>
   </main>
 </body>
