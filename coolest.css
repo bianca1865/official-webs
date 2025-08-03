@@ -1,4 +1,4 @@
-/* General Reset and Base Styles */
+/* ====== Base and Reset ====== */
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -6,7 +6,7 @@ body {
   color: #222;
 }
 
-/* Header and Navigation */
+/* ====== Header & Navigation ====== */
 header {
   display: flex;
   justify-content: space-between;
@@ -39,14 +39,125 @@ nav.icon-links.right {
   align-items: center;
 }
 
-/* Main container */
+/* ====== Main container ====== */
 main {
   max-width: 1100px;
   margin: 40px auto;
   padding: 0 15px 60px;
 }
 
-/* Cart grid */
+/* ====== Collection Page ====== */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.product-card {
+  aspect-ratio: 1 / 1;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  justify-content: flex-start;
+  transition: box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  flex-shrink: 0;
+  object-fit: contain;
+  max-height: 40%;
+}
+
+.product-card h3 {
+  margin: 5px 0 10px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: black;
+  flex-shrink: 0;
+}
+
+label {
+  font-weight: 600;
+  margin-top: 8px;
+  display: block;
+  color: #333;
+}
+
+select {
+  width: 100%;
+  padding: 6px;
+  margin-top: 4px;
+  border-radius: 6px;
+  border: 1px solid #aaa;
+  font-size: 1rem;
+  background: white;
+  cursor: pointer;
+}
+
+.color-selection {
+  display: flex;
+  gap: 12px;
+  margin: 12px 0;
+}
+
+.color-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.color-circle.black {
+  background-color: black;
+}
+
+.color-circle.white {
+  background-color: white;
+  border: 2px solid #aaa;
+}
+
+.color-circle.grey {
+  background-color: grey;
+}
+
+.color-circle.selected {
+  border-color: black;
+}
+
+.add-to-cart-btn {
+  margin-top: auto;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 0;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #333;
+}
+
+/* ====== Cart Page ====== */
 .cart-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -54,7 +165,6 @@ main {
   margin-bottom: 30px;
 }
 
-/* Cart item cards */
 .cart-item-card {
   aspect-ratio: 1 / 1;
   background: white;
@@ -72,7 +182,6 @@ main {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* Cart item images */
 .cart-item-card img {
   width: 100%;
   height: auto;
@@ -83,7 +192,6 @@ main {
   max-height: 40%;
 }
 
-/* Headings */
 .cart-item-card h3 {
   margin: 5px 0 10px;
   font-size: 1.1rem;
@@ -92,7 +200,7 @@ main {
   flex-shrink: 0;
 }
 
-/* Quantity controls container */
+/* Quantity controls */
 .quantity-control {
   display: flex;
   align-items: center;
@@ -101,7 +209,6 @@ main {
   user-select: none;
 }
 
-/* Quantity buttons */
 .qty-btn {
   background-color: black;
   color: white;
@@ -118,7 +225,6 @@ main {
   background-color: #333;
 }
 
-/* Quantity input field (readonly) */
 .qty-input {
   width: 45px;
   text-align: center;
@@ -130,7 +236,7 @@ main {
   background: #f5f5f5;
 }
 
-/* Total price section */
+/* Total section */
 .total-section {
   max-width: 400px;
   margin-left: auto;
@@ -142,7 +248,7 @@ main {
   color: black;
 }
 
-/* Proceed to Checkout button */
+/* Checkout button */
 .checkout-btn {
   background-color: black;
   color: white;

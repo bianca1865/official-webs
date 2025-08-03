@@ -4,13 +4,159 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Coolest - Cart</title>
-  <link rel="stylesheet" href="coolest.css" />
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
+  <style>
+    /* General Reset and Base Styles */
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fff;
+      color: #222;
+    }
+    /* Header and Navigation */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      border-bottom: 1px solid #ddd;
+    }
+    .logo {
+      font-weight: 900;
+      font-size: 1.8rem;
+      color: black;
+      letter-spacing: 2px;
+    }
+    nav.icon-links a {
+      margin-left: 20px;
+      color: black;
+      font-size: 1.4rem;
+      transition: color 0.3s ease;
+      text-decoration: none;
+    }
+    nav.icon-links a:hover {
+      color: #555;
+    }
+    nav.icon-links.right {
+      display: flex;
+      align-items: center;
+    }
+    /* Main container */
+    main {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 15px 60px;
+    }
+    /* Cart grid */
+    .cart-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      margin-bottom: 30px;
+    }
+    /* Cart item cards */
+    .cart-item-card {
+      aspect-ratio: 1 / 1;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+      justify-content: flex-start;
+      transition: box-shadow 0.3s ease;
+    }
+    .cart-item-card:hover {
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+    .cart-item-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      flex-shrink: 0;
+      object-fit: contain;
+      max-height: 40%;
+    }
+    .cart-item-card h3 {
+      margin: 5px 0 10px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: black;
+      flex-shrink: 0;
+    }
+    /* Quantity controls container */
+    .quantity-control {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+      gap: 10px;
+      user-select: none;
+    }
+    /* Quantity buttons */
+    .qty-btn {
+      background-color: black;
+      color: white;
+      border: none;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .qty-btn:hover {
+      background-color: #333;
+    }
+    /* Quantity input field (readonly) */
+    .qty-input {
+      width: 45px;
+      text-align: center;
+      font-size: 1rem;
+      padding: 6px;
+      border-radius: 6px;
+      border: 1px solid #aaa;
+      pointer-events: none;
+      background: #f5f5f5;
+    }
+    /* Total price section */
+    .total-section {
+      max-width: 400px;
+      margin-left: auto;
+      font-size: 1.3rem;
+      font-weight: 700;
+      border-top: 2px solid black;
+      padding-top: 15px;
+      text-align: right;
+      color: black;
+    }
+    /* Proceed to Checkout button */
+    .checkout-btn {
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 14px 0;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 100%;
+      max-width: 400px;
+      margin-left: auto;
+      margin-top: 20px;
+      display: block;
+    }
+    .checkout-btn:hover {
+      background-color: #333;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -26,102 +172,18 @@
   <main>
     <h2 style="text-align:center; margin-bottom: 30px;">Your Cart</h2>
     <section class="cart-grid">
-      <!-- Cart Item 1 -->
-      <div class="cart-item-card">
-        <img src="https://via.placeholder.com/300x200?text=Stylish+Black+Shirt" alt="Stylish Black Shirt" />
-        <h3>Stylish Black Shirt</h3>
-        <p>Gender: Women</p>
-        <p>Size: M</p>
-        <p>Color: <span style="display:inline-block; width:20px; height:20px; background:black; border-radius:50%; vertical-align:middle;"></span></p>
-        <p>Price: P350</p>
-
-        <div class="quantity-control">
-          <button class="qty-btn" data-action="decrease">−</button>
-          <input type="text" class="qty-input" value="1" readonly />
-          <button class="qty-btn" data-action="increase">+</button>
-        </div>
-      </div>
-
-      <!-- Cart Item 2 -->
-      <div class="cart-item-card">
-        <img src="https://via.placeholder.com/300x200?text=Classic+Grey+Jacket" alt="Classic Grey Jacket" />
-        <h3>Classic Grey Jacket</h3>
-        <p>Gender: Men</p>
-        <p>Size: L</p>
-        <p>Color: <span style="display:inline-block; width:20px; height:20px; background:grey; border-radius:50%; vertical-align:middle;"></span></p>
-        <p>Price: P420</p>
-
-        <div class="quantity-control">
-          <button class="qty-btn" data-action="decrease">−</button>
-          <input type="text" class="qty-input" value="1" readonly />
-          <button class="qty-btn" data-action="increase">+</button>
-        </div>
-      </div>
-
-      <!-- Cart Item 3 -->
-      <div class="cart-item-card">
-        <img src="https://via.placeholder.com/300x200?text=White+T-shirt" alt="White T-shirt" />
-        <h3>White T-shirt</h3>
-        <p>Gender: Women</p>
-        <p>Size: S</p>
-        <p>Color: <span style="display:inline-block; width:20px; height:20px; background:white; border-radius:50%; border: 1px solid #aaa; vertical-align:middle;"></span></p>
-        <p>Price: P280</p>
-
-        <div class="quantity-control">
-          <button class="qty-btn" data-action="decrease">−</button>
-          <input type="text" class="qty-input" value="1" readonly />
-          <button class="qty-btn" data-action="increase">+</button>
-        </div>
-      </div>
+      <!-- Cart items here -->
     </section>
 
     <div class="total-section" id="total">
-      Total: P1050
+      Total: P0
     </div>
 
     <button class="checkout-btn" onclick="window.location.href='checkout.html'">Proceed to Checkout</button>
   </main>
 
   <script>
-    const cartItems = [
-      { price: 350 },
-      { price: 420 },
-      { price: 280 }
-    ];
-
-    function updateTotal() {
-      let total = 0;
-      document.querySelectorAll('.cart-item-card').forEach((card, index) => {
-        const qty = parseInt(card.querySelector('.qty-input').value);
-        total += cartItems[index].price * qty;
-      });
-      document.getElementById('total').textContent = `Total: P${total}`;
-    }
-
-    document.querySelectorAll('.cart-item-card').forEach((card, index) => {
-      const decreaseBtn = card.querySelector('button[data-action="decrease"]');
-      const increaseBtn = card.querySelector('button[data-action="increase"]');
-      const qtyInput = card.querySelector('.qty-input');
-
-      decreaseBtn.addEventListener('click', () => {
-        let qty = parseInt(qtyInput.value);
-        if (qty > 1) {
-          qty--;
-          qtyInput.value = qty;
-          updateTotal();
-        }
-      });
-
-      increaseBtn.addEventListener('click', () => {
-        let qty = parseInt(qtyInput.value);
-        qty++;
-        qtyInput.value = qty;
-        updateTotal();
-      });
-    });
-
-    // Initialize total on page load
-    updateTotal();
+    // Your cart quantity & total calculation JS goes here
   </script>
 </body>
 </html>
