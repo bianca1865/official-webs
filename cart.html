@@ -2,10 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Coolest - Cart</title>
-  <link rel="stylesheet" href="coolest.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  <link rel="stylesheet" href="coolest.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
 </head>
 <body>
   <header>
@@ -19,50 +24,104 @@
   </header>
 
   <main>
-    <h2 style="text-align:center;">Your Cart</h2>
-
-    <section class="product-grid">
+    <h2 style="text-align:center; margin-bottom: 30px;">Your Cart</h2>
+    <section class="cart-grid">
       <!-- Cart Item 1 -->
-      <div class="product-card">
-        <div class="slideshow-container">
-          <img src="https://via.placeholder.com/150x200?text=Cool+Top" class="slide-image" alt="Cool Top">
-        </div>
-        <div class="product-info">
-          <h3>Cool Top</h3>
-          <p><strong>Gender:</strong> Women</p>
-          <p><strong>Size:</strong> M</p>
-          <p><strong>Color:</strong> <span class="color-box" style="background-color: black;"></span></p>
-          <label>Quantity:
-            <input type="number" value="1" min="1" class="quantity-input">
-          </label>
-          <p><strong>Price:</strong> P250</p>
+      <div class="cart-item-card">
+        <img src="https://via.placeholder.com/300x200?text=Stylish+Black+Shirt" alt="Stylish Black Shirt" />
+        <h3>Stylish Black Shirt</h3>
+        <p>Gender: Women</p>
+        <p>Size: M</p>
+        <p>Color: <span style="display:inline-block; width:20px; height:20px; background:black; border-radius:50%; vertical-align:middle;"></span></p>
+        <p>Price: P350</p>
+
+        <div class="quantity-control">
+          <button class="qty-btn" data-action="decrease">−</button>
+          <input type="text" class="qty-input" value="1" readonly />
+          <button class="qty-btn" data-action="increase">+</button>
         </div>
       </div>
 
       <!-- Cart Item 2 -->
-      <div class="product-card">
-        <div class="slideshow-container">
-          <img src="https://via.placeholder.com/150x200?text=Grey+Jacket" class="slide-image" alt="Grey Jacket">
-        </div>
-        <div class="product-info">
-          <h3>Grey Jacket</h3>
-          <p><strong>Gender:</strong> Men</p>
-          <p><strong>Size:</strong> L</p>
-          <p><strong>Color:</strong> <span class="color-box" style="background-color: grey;"></span></p>
-          <label>Quantity:
-            <input type="number" value="1" min="1" class="quantity-input">
-          </label>
-          <p><strong>Price:</strong> P400</p>
+      <div class="cart-item-card">
+        <img src="https://via.placeholder.com/300x200?text=Classic+Grey+Jacket" alt="Classic Grey Jacket" />
+        <h3>Classic Grey Jacket</h3>
+        <p>Gender: Men</p>
+        <p>Size: L</p>
+        <p>Color: <span style="display:inline-block; width:20px; height:20px; background:grey; border-radius:50%; vertical-align:middle;"></span></p>
+        <p>Price: P420</p>
+
+        <div class="quantity-control">
+          <button class="qty-btn" data-action="decrease">−</button>
+          <input type="text" class="qty-input" value="1" readonly />
+          <button class="qty-btn" data-action="increase">+</button>
         </div>
       </div>
 
-      <!-- Add more cart items similarly as needed -->
+      <!-- Cart Item 3 -->
+      <div class="cart-item-card">
+        <img src="https://via.placeholder.com/300x200?text=White+T-shirt" alt="White T-shirt" />
+        <h3>White T-shirt</h3>
+        <p>Gender: Women</p>
+        <p>Size: S</p>
+        <p>Color: <span style="display:inline-block; width:20px; height:20px; background:white; border-radius:50%; border: 1px solid #aaa; vertical-align:middle;"></span></p>
+        <p>Price: P280</p>
+
+        <div class="quantity-control">
+          <button class="qty-btn" data-action="decrease">−</button>
+          <input type="text" class="qty-input" value="1" readonly />
+          <button class="qty-btn" data-action="increase">+</button>
+        </div>
+      </div>
     </section>
 
-    <section class="cart-summary" style="text-align:center; margin: 40px 0;">
-      <p><strong>Total: P650</strong></p>
-      <a href="checkout.html" class="checkout-button" style="background-color: black; color: white;">Proceed to Checkout</a>
-    </section>
+    <div class="total-section" id="total">
+      Total: P1050
+    </div>
+
+    <button class="checkout-btn" onclick="window.location.href='checkout.html'">Proceed to Checkout</button>
   </main>
+
+  <script>
+    const cartItems = [
+      { price: 350 },
+      { price: 420 },
+      { price: 280 }
+    ];
+
+    function updateTotal() {
+      let total = 0;
+      document.querySelectorAll('.cart-item-card').forEach((card, index) => {
+        const qty = parseInt(card.querySelector('.qty-input').value);
+        total += cartItems[index].price * qty;
+      });
+      document.getElementById('total').textContent = `Total: P${total}`;
+    }
+
+    document.querySelectorAll('.cart-item-card').forEach((card, index) => {
+      const decreaseBtn = card.querySelector('button[data-action="decrease"]');
+      const increaseBtn = card.querySelector('button[data-action="increase"]');
+      const qtyInput = card.querySelector('.qty-input');
+
+      decreaseBtn.addEventListener('click', () => {
+        let qty = parseInt(qtyInput.value);
+        if (qty > 1) {
+          qty--;
+          qtyInput.value = qty;
+          updateTotal();
+        }
+      });
+
+      increaseBtn.addEventListener('click', () => {
+        let qty = parseInt(qtyInput.value);
+        qty++;
+        qtyInput.value = qty;
+        updateTotal();
+      });
+    });
+
+    // Initialize total on page load
+    updateTotal();
+  </script>
 </body>
 </html>

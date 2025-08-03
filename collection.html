@@ -2,10 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Coolest - Collection</title>
   <link rel="stylesheet" href="coolest.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
 </head>
 <body>
   <header>
@@ -17,56 +22,115 @@
       <a href="aboutus.html" title="About Us"><i class="fas fa-file-alt"></i></a>
     </nav>
   </header>
+
   <main>
-    <h2 style="text-align:center;">Our Clothing Collection</h2>
-    <section class="grid-collection">
-      <!-- Product Card (repeat 9x) -->
+    <h2 style="text-align:center; margin-bottom: 30px;">Collection</h2>
+    <section class="product-grid">
+      <!-- Product Card 1 -->
       <div class="product-card">
-        <div class="product-slideshow">
-          <img class="product-slide" src="https://via.placeholder.com/300x400?text=Women+Look" alt="Women Look">
-          <img class="product-slide" src="https://via.placeholder.com/300x400?text=Men+Look" alt="Men Look">
+        <img src="https://via.placeholder.com/300x200?text=Stylish+Black+Shirt" alt="Stylish Black Shirt" />
+        <h3>Stylish Black Shirt</h3>
+
+        <label for="gender1">Gender</label>
+        <select id="gender1" name="gender1">
+          <option value="women">Women</option>
+          <option value="men">Men</option>
+        </select>
+
+        <label for="size1">Size</label>
+        <select id="size1" name="size1">
+          <option>S</option>
+          <option>M</option>
+          <option>L</option>
+          <option>XL</option>
+        </select>
+
+        <label>Color</label>
+        <div class="color-selection" aria-label="Choose color for product 1">
+          <div class="color-circle black selected" tabindex="0" role="button" aria-pressed="true"></div>
+          <div class="color-circle white" tabindex="0" role="button" aria-pressed="false"></div>
+          <div class="color-circle grey" tabindex="0" role="button" aria-pressed="false"></div>
         </div>
-        <div class="product-info">
-          <select name="gender">
-            <option value="women">Women</option>
-            <option value="men">Men</option>
-          </select>
 
-          <select name="size">
-            <option value="s">S</option>
-            <option value="m">M</option>
-            <option value="l">L</option>
-            <option value="xl">XL</option>
-          </select>
-
-          <div class="color-options">
-            <label style="background-color: black;"></label>
-            <label style="background-color: white;"></label>
-            <label style="background-color: grey;"></label>
-          </div>
-
-          <div class="price-cart">
-            <span class="price">P250</span>
-            <button class="add-to-cart">Add to Cart</button>
-          </div>
-        </div>
+        <button class="add-to-cart-btn">Add to Cart - P350</button>
       </div>
-      <!-- Repeat product-card 8 more times -->
+
+      <!-- Product Card 2 -->
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x200?text=Classic+Grey+Jacket" alt="Classic Grey Jacket" />
+        <h3>Classic Grey Jacket</h3>
+
+        <label for="gender2">Gender</label>
+        <select id="gender2" name="gender2">
+          <option value="men">Men</option>
+          <option value="women">Women</option>
+        </select>
+
+        <label for="size2">Size</label>
+        <select id="size2" name="size2">
+          <option>S</option>
+          <option>M</option>
+          <option>L</option>
+          <option>XL</option>
+        </select>
+
+        <label>Color</label>
+        <div class="color-selection" aria-label="Choose color for product 2">
+          <div class="color-circle grey selected" tabindex="0" role="button" aria-pressed="true"></div>
+          <div class="color-circle black" tabindex="0" role="button" aria-pressed="false"></div>
+          <div class="color-circle white" tabindex="0" role="button" aria-pressed="false"></div>
+        </div>
+
+        <button class="add-to-cart-btn">Add to Cart - P420</button>
+      </div>
+
+      <!-- Product Card 3 -->
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x200?text=White+T-shirt" alt="White T-shirt" />
+        <h3>White T-shirt</h3>
+
+        <label for="gender3">Gender</label>
+        <select id="gender3" name="gender3">
+          <option value="women">Women</option>
+          <option value="men">Men</option>
+        </select>
+
+        <label for="size3">Size</label>
+        <select id="size3" name="size3">
+          <option>S</option>
+          <option>M</option>
+          <option>L</option>
+          <option>XL</option>
+        </select>
+
+        <label>Color</label>
+        <div class="color-selection" aria-label="Choose color for product 3">
+          <div class="color-circle white selected" tabindex="0" role="button" aria-pressed="true"></div>
+          <div class="color-circle black" tabindex="0" role="button" aria-pressed="false"></div>
+          <div class="color-circle grey" tabindex="0" role="button" aria-pressed="false"></div>
+        </div>
+
+        <button class="add-to-cart-btn">Add to Cart - P280</button>
+      </div>
+
+      <!-- Add more product cards to fill the 3x3 grid as needed -->
     </section>
   </main>
 
   <script>
-    // Simple image slideshow for each product
-    document.querySelectorAll(".product-slideshow").forEach(slideshow => {
-      const slides = slideshow.querySelectorAll(".product-slide");
-      let index = 0;
-      setInterval(() => {
-        slides.forEach(s => s.style.display = "none");
-        slides[index].style.display = "block";
-        index = (index + 1) % slides.length;
-      }, 3000);
+    // Color selection handling
+    document.querySelectorAll('.color-selection').forEach(container => {
+      container.querySelectorAll('.color-circle').forEach(circle => {
+        circle.addEventListener('click', () => {
+          container.querySelectorAll('.color-circle').forEach(c => {
+            c.classList.remove('selected');
+            c.setAttribute('aria-pressed', 'false');
+          });
+          circle.classList.add('selected');
+          circle.setAttribute('aria-pressed', 'true');
+        });
+      });
     });
   </script>
 </body>
 </html>
-
