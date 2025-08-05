@@ -109,27 +109,28 @@ main {
 }
 
 .color-swatch {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  border: 2px solid #ccc;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  margin: 0 5px;
+  border: 2px solid transparent;
   cursor: pointer;
-  position: relative;
-  align-items: center;
-  justify-content: center;
+  border-radius: 50%;
 }
 
 .color-swatch.selected {
-  border: 2px solid black;
+  border-color:black;
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
 }
 .color-swatch.selected::after {
   content: "✓";
   color: white;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   position: absolute;
-  top: 2px;
-  left: 6px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .price-cart {

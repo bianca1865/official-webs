@@ -16,24 +16,27 @@ window.onload = showSlides;
 
 //COLOUR SELECTION FOR COLLECTION
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.color-selection').forEach(selection => {
-    const swatches = selection.querySelectorAll('.color-swatch');
-    const hiddenInput = selection.querySelector('.selected-color');
+  document.querySelectorAll('.color-options').forEach(group => {
+    const swatches = group.querySelectorAll('.color-swatch');
+    const hiddenInput = group.closest('.product-card').querySelector('.selected-color');
 
     swatches.forEach(swatch => {
       swatch.addEventListener('click', () => {
-        // Unselect all swatches
+        // Unselect all swatches in this group
         swatches.forEach(s => s.classList.remove('selected'));
 
-        // Mark this swatch as selected
+        // Select the clicked swatch
         swatch.classList.add('selected');
 
-        // Update the hidden input
-        hiddenInput.value = swatch.dataset.color;
+        // Update the hidden input value
+        if (hiddenInput) {
+          hiddenInput.value = swatch.dataset.color;
+        }
       });
     });
   });
 });
+
 
 
 //TOTAL FOR CART
