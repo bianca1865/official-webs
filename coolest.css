@@ -122,15 +122,14 @@ main {
 .color-swatch.selected {
   border: 2px solid black;
 }
-.color-swatch::after {
-  content: '✔';
+.color-swatch.selected::after {
+  content: "✓";
   color: white;
   font-size: 16px;
-  display: none;
-}
-
-.color-swatch.selected::after {
-  display: block;
+  font-weight: bold;
+  position: absolute;
+  top: 2px;
+  left: 6px;
 }
 
 .price-cart {

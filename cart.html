@@ -52,9 +52,17 @@
           <label>Quantity:
             <input type="number" value="1" min="1" class="quantity-input">
           </label>
-          <p><strong>Price:</strong> P400</p>
+
+          <p><strong>Price:</strong> P<span class="item-price">400</span></p>
+          <p><strong>Subtotal:</strong> P<span class="item-subtotal">400</span></p>
         </div>
       </div>
+
+      <!-- Total and checkout -->
+<div class="cart-total">
+  <p><strong>Total:</strong> P<span id="total-price">0</span></p>
+  <button class="checkout-btn">Proceed to Checkout</button>
+</div>
 
       <!-- Add more cart items similarly as needed -->
     </section>
