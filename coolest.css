@@ -97,19 +97,28 @@ main {
   padding: 5px;
 }
 
-.color-options {
+.color-selection {
   margin-top: 10px;
 }
 
-.color-options label {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  margin: 0 5px;
+.color-options {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.color-swatch {
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
   cursor: pointer;
 }
+
+.color-swatch.selected {
+  border: 2px solid black;
+}
+
 
 .price-cart {
   margin-top: 10px;

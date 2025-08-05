@@ -1,3 +1,4 @@
+//SLIDESHOW FOR HOME
 let slideIndex = 0;
 const slides = document.getElementsByClassName("slide");
 
@@ -12,3 +13,17 @@ function showSlides() {
 }
 
 window.onload = showSlides;
+
+//COLOUR SELECTION FOR COLLECTION
+document.querySelectorAll('.color-options').forEach(group => {
+  group.querySelectorAll('.color-swatch').forEach(swatch => {
+    swatch.addEventListener('click', () => {
+      // Unselect all
+      group.querySelectorAll('.color-swatch').forEach(s => s.classList.remove('selected'));
+      // Select clicked
+      swatch.classList.add('selected');
+      // Set hidden input value
+      group.parentElement.querySelector('.selected-color').value = swatch.dataset.color;
+    });
+  });
+});
